@@ -1,5 +1,5 @@
 <.simple_form :let={f} for={@changeset} phx-change="validate" phx-submit="save" action="/topics">
-  <.input field={f[:title]} type="text" label="title"/>
+  <.input field={f[:title]} type="text" label="Topic Title" errors={@changeset.errors}/>
   <:actions>
     <.button>Save</.button>
   </:actions>

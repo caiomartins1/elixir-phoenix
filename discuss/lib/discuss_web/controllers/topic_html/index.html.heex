@@ -1,0 +1,13 @@
+<.table id="topics" rows={@topics}>
+  <:col :let={topic} label="id"><%= topic.id %></:col>
+  <:col :let={topic} label="title"><%= topic.title %></:col>
+</.table>
+
+<div class="flex justify-end">
+  <.link
+    navigate="/topics/new"
+    class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700"
+    >
+    <.icon name="hero-plus-circle-solid" class="h-8 w-8" />
+  </.link>
+</div>
