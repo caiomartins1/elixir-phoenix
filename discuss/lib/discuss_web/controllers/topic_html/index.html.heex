@@ -1,13 +1,30 @@
 <.table id="topics" rows={@topics}>
-  <:col :let={topic} label="id"><%= topic.id %></:col>
-  <:col :let={topic} label="title"><%= topic.title %></:col>
+  <:col :let={topic} label="ID">
+    <%= topic.id %>
+  </:col>
+  <:col :let={topic} label="Title"><%= topic.title %></:col>
+  <:col :let={topic} label="Actions">   
+    <div class="flex gap-2">
+      <.link
+        navigate={"/topics/#{topic.id}/edit"}
+      >
+        <.icon name="hero-pencil-square-solid" class="h-6 w-6" />
+      </.link>
+      <.link
+        href={"/topics/#{topic.id}"}
+        method="delete"
+      >
+        <.icon name="hero-x-circle-solid" class="h-6 w-6 bg-red-600" />
+      </.link>
+    </div>
+
+  </:col>
 </.table>
 
 <div class="flex justify-end">
   <.link
     navigate="/topics/new"
-    class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700"
-    >
-    <.icon name="hero-plus-circle-solid" class="h-8 w-8" />
+  >
+    <.icon name="hero-plus-circle-solid" class="h-12 w-12" />
   </.link>
 </div>
